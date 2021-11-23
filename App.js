@@ -3,10 +3,11 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Splashscreen from './src/Component/SplashScreen/Splashscreen';
 import Welcome from './src/Component/Welcome/Welcome';
+import Login from './src/Component/Login/Login';
 
 export default function App() {
   return (
-    <Welcome/>
+    <Login/>
   );
 }
 

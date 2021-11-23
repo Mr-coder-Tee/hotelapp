@@ -10,7 +10,7 @@ const styles=StyleSheet.create({
         flex:1,
         width:screenWidth,
         height:screenHieght,
-
+ 
     },
     backgroundImg:{
         backgroundColor:'pink',
