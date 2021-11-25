@@ -17,7 +17,7 @@ export const COLORS={
    succefulColor:'rgba(13,242,22,.4)',
    failColor:'rgba(255,0,0,.4)',
    warningColor:'rgba(255,204,0,.4)',
-   gray:'rgba(196,196,196,.25)',
+   gray:'rgba(196,196,196,.5)',
    black:'black',
    white:'white',
 }

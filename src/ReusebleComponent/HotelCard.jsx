@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   Text,
@@ -7,31 +7,23 @@ import {
   Image,
   Dimensions
 } from "react-native";
-import { Icon } from "react-native-elements";
-import { COLORS, FONTS } from "../../Constants/Index";
-import Rating from './Rating'
+import { Icon, Avatar } from "react-native-elements";
+import { COLORS, FONTS,dummyData } from "../../Constants/Index";
+import Rating from "./Rating";
+import Reviews from "./Reviews";
 
 const cardHieght = Dimensions.get("screen").height * 0.22;
 const cardWidth = Dimensions.get("screen").width;
 
 const HotelCard = () => {
+
   const img = {
     uri: "https://images.unsplash.com/photo-1517840901100-8179e982acb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
   };
 
-  var star=5
-  var rate=4.3
+  const rev = dummyData.rev
 
-//   const Rating=()=>(
-//       <View style={{flexDirection:'row'}}> 
-//           <Icon name="star" type="font-awesome" color={COLORS.goldColor}/>
-//           <Icon name="star-o" type="font-awesome" color={COLORS.goldColor}/>
-//           <Icon name="star-half" type="font-awesome" color={COLORS.goldColor}/>
-//       </View>
-//   )
-  const Reviews=()=>(
-    <View></View>
-  )
+  
 
 
   return (
@@ -39,13 +31,21 @@ const HotelCard = () => {
       <View style={styles.imageContainer}>
         <Image source={img} style={styles.coverImg} />
       </View>
-      <View style={{paddingVertical:10,marginLeft:5}}>
-          <Text style={{...FONTS.h3}} numberOfLines={1}>R3500</Text>
-          <Text style={{...FONTS.h4}} numberOfLines={1}>Hotel name</Text>
-          <Text style={{...FONTS.body3}} numberOfLines={2}>description</Text>
-          <Text style={{...FONTS.body3}} numberOfLines={1}>2 rooms,2 adults</Text>
-          <Rating rate={4.3}/>
-          <Reviews/>
+      <View style={{ paddingVertical: 10, marginLeft: 5 }}>
+        <Text style={{ ...FONTS.h3 }} numberOfLines={1}>
+          R3500
+        </Text>
+        <Text style={{ ...FONTS.h4 }} numberOfLines={1}>
+          Hotel name
+        </Text>
+        <Text style={{ ...FONTS.body3 }} numberOfLines={2}>
+          description
+        </Text>
+        <Text style={{ ...FONTS.body3 }} numberOfLines={1}>
+          2 rooms,2 adults
+        </Text>
+        <Rating rate={2} />
+        <Reviews hotelreviews={rev}/>
       </View>
     </TouchableOpacity>
   );
@@ -57,10 +57,10 @@ const styles = StyleSheet.create({
   cardContainer: {
     height: cardHieght,
     width: cardWidth,
-    padding:1,
+    padding: 1,
     // overflow:'hidden',
     // borderRadius:20,
-    flexDirection:'row'
+    flexDirection: "row"
   },
   coverImg: {
     width: "100%",
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     height: "100%",
     width: "25%",
-    overflow:'hidden',
-    borderRadius:20
+    overflow: "hidden",
+    borderRadius: 20
   }
 });
