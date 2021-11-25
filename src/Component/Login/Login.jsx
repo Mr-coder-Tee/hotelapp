@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { Input, Icon, Button } from "react-native-elements";
 import styles from "./Styles";
-import { Images } from "../../../Constants/Index";
+import { Images,FONTS,COLORS } from "../../../Constants/Index";
 const backGroundImgHeight = Dimensions.get("screen").height;
 const buttonLengths = 50;
 const buttonBorderRadius = buttonLengths / 2;
@@ -36,10 +36,10 @@ const Login = () => {
       name: "facebook",
       iconname: "facebook",
       type: "font-awesome",
-      color: "#111"
+      color: COLORS.facebookColor
     },
-    { name: "google", iconname: "google", type: "font-awesome", color: "#111" },
-    { name: "mobile", iconname: "mobile", type: "font-awesome", color: "#111" }
+    { name: "google", iconname: "google", type: "font-awesome", color: COLORS.googleColor },
+    { name: "mobile", iconname: "mobile", type: "font-awesome", color: COLORS.phoneNumColor }
   ];
 
   const Socials = () =>
@@ -59,7 +59,7 @@ const Login = () => {
         }}
         key={social.name}
       >
-        <Icon name={social.iconname} type={social.type} />
+        <Icon name={social.iconname} type={social.type} color={social.color}/>
       </TouchableOpacity>
     ));
 
@@ -73,7 +73,7 @@ const Login = () => {
         <Image source={Images.logo} />
       </ImageBackground>
       <View style={styles.contentView}>
-        <Text>Welcome Back</Text>
+        <Text style={{...FONTS.h1,marginBottom:10}}>Welcome Back</Text>
         <Input
           leftIcon={
             <Icon name="at" type="font-awesome" style={{ marginRight: 10 }} />
@@ -85,8 +85,8 @@ const Login = () => {
             alignItems: "center",
             borderColor: "rgba(0,0,0,.2)",
             borderRadius: 20,
-            paddingLeft: 5,
-            paddingRight: 5
+            paddingLeft:10,
+            paddingRight:10
           }}
         />
         <Input
@@ -101,28 +101,29 @@ const Login = () => {
             alignItems: "center",
             borderColor: "rgba(0,0,0,.2)",
             borderRadius: 20,
-            paddingLeft: 5,
-            paddingRight: 5
+            paddingLeft: 10,
+            paddingRight: 10
           }}
         />
         <TouchableOpacity style={{ alignItems: "flex-end", paddingRight: 10 }}>
-          <Text style={{ color: "#0276FD" }}>forgot password?</Text>
+          <Text style={{ color: COLORS.textLinks,...FONTS.body3 }}>forgot password?</Text>
         </TouchableOpacity>
         <View
           style={{
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "center",
-            marginTop: 10
+            marginTop: 20,
+            marginBottom:5,
           }}
         >
-          <Text>Sign in</Text>
+          <Text style={{...FONTS.body1}}>Sign in</Text>
           <Button
             icon={
               <Icon name="long-arrow-right" type="font-awesome" color="white" />
             }
             buttonStyle={{
-              backgroundColor: "#0276FD",
+              backgroundColor: COLORS.LinkbuttonColor,
               borderRadius: buttonBorderRadius,
               justifyContent: "center",
               alignItems: "center",
@@ -131,6 +132,7 @@ const Login = () => {
             }}
           />
         </View>
+        <Text style={{textAlign:'center',...FONTS.body2,marginBottom:5}}>or</Text>
         <View
           style={{
             flexDirection: "row",
@@ -138,12 +140,13 @@ const Login = () => {
             alignItems: "center"
           }}
         >
+          
           <Socials />
         </View>
-        <View>
-          <Text>Don’t have account yet?</Text>
+        <View style={{flexDirection:'row',marginTop:10,alignItems:'center',justifyContent:'center'}}>
+          <Text style={{...FONTS.body2}}>Don’t have account yet?</Text>
           <TouchableOpacity>
-            <Text>Sign up</Text>
+            <Text style={{...FONTS.body2,color:COLORS.textLinks}}>Sign up</Text>
           </TouchableOpacity>
         </View>
       </View>

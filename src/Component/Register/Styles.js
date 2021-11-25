@@ -1,6 +1,7 @@
 import { StyleSheet,StatusBar, Dimensions } from "react-native";
 const screenWidth=Dimensions.get('screen').width
 const screenHieght=Dimensions.get('screen').height
+const viewhieght=screenHieght*.65
 
 const styles=StyleSheet.create({
     container:{
@@ -10,10 +11,20 @@ const styles=StyleSheet.create({
         flex:1,
         alignItems:'center',
     },
-    img:{
-        position:'absolute',
-        bottom:10,
+  
+    contentView:{
+        height:viewhieght,
+        width:screenWidth,
+        backgroundColor:'white',
+        borderTopRightRadius:40,
+        borderTopLeftRadius:40,
+        // position:'absolute',
+        // bottom:0,
+        // left:0,
+        // right:0,
+        padding:20
     }
+    
     
 });
 export default styles

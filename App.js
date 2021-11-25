@@ -1,13 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Splashscreen from './src/Component/SplashScreen/Splashscreen';
-import Welcome from './src/Component/Welcome/Welcome';
-import Login from './src/Component/Login/Login';
-
+import {ResetPassword,Welcome} from './src/Component/Index'
+import HomapageCard from './src/ReusebleComponent/HomapageCard';
+import HotelCard from './src/ReusebleComponent/HotelCard';
 export default function App() {
   return (
-    <Login/>
+    <View style={styles.container}>
+      <HotelCard/>
+    </View>
   );
 }
 
@@ -17,5 +18,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
 });
