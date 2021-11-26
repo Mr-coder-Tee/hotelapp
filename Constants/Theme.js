@@ -1,5 +1,7 @@
-import { Dimensions } from "react-native";
+import { Dimensions ,StatusBar} from "react-native";
 const{width,height}=Dimensions.get('screen')
+const margintop = StatusBar.currentHeight + 50;
+
 
  
 export const COLORS={
@@ -37,6 +39,9 @@ export const SIZES={
     body3:16,
     body4:13,
     body5:12,
+    screenWidth:width,
+    screenHeight:height,
+    marginFromBack:margintop,
 }
 export const FONTS={
     largeTitle: {fontSize:SIZES.largeTitle,lineHeight:40,fontWeight:'bold'},

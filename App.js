@@ -8,10 +8,17 @@ import AboutHotel from './src/Component/AboutHotel/AboutHotel';
 import Location from './src/Component/Map/Location';
 import CallOut from './src/ReusebleComponent/CallOut';
 import History from './src/Component/History/History';
+import Profile from './src/Component/ProfileSetting/Profile';
+import WriteReview from './src/Component/WriteReview/WriteReview';
+import CommentCard from './src/ReusebleComponent/CommentCard';
+import GalaryView from './src/Component/ViewGalary/GalaryView';
+
+
+
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <History/>
+      <GalaryView renderIndex={1}/>
     </SafeAreaView>
   );
 }
@@ -21,7 +28,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     // alignItems: 'center',
-    // // justifyContent: 'center',
+    justifyContent: 'center',
     // marginTop:StatusBar.currentHeight,
   },
 });

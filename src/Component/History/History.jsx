@@ -47,9 +47,9 @@ const History = () => {
             buttonStyle={{ padding:10 ,backgroundColor:COLORS.buttonColor}}
           />
         </View>
-        <View style={{paddingHorizontal:20,alignItems:'flex-end',marginVertical:15}}>
+        <TouchableOpacity activeOpacity={.6} style={{paddingHorizontal:20,alignItems:'flex-end',marginVertical:15}}>
           <Icon name="delete-outline" type="material" color={COLORS.black} />
-        </View>
+        </TouchableOpacity>
         <View style={{paddingHorizontal:10}}>
             <HistoryCard/>
         </View>
