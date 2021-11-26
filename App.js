@@ -7,10 +7,11 @@ import Back from './src/ReusebleComponent/Back';
 import AboutHotel from './src/Component/AboutHotel/AboutHotel';
 import Location from './src/Component/Map/Location';
 import CallOut from './src/ReusebleComponent/CallOut';
+import History from './src/Component/History/History';
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Location/>
+      <History/>
     </SafeAreaView>
   );
 }
