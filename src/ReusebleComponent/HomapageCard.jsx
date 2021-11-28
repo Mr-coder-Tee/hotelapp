@@ -13,20 +13,21 @@ import { Icon } from "react-native-elements";
 const cardHieght = Dimensions.get("screen").height * 0.35;
 const cardWidth = Dimensions.get("screen").width * 0.55;
 
-const HomapageCard = () => {
+const HomapageCard = ({hotel,navigation}) => {
+  // console.log('--->',hotel.address)
   const img = {
-    uri: "https://images.unsplash.com/photo-1517840901100-8179e982acb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+    uri: hotel.outSidePhoto
   };
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={()=>navigation.navigate('AboutHotel',{data:hotel})}>
       <Image source={img} style={styles.coverImg} />
       <View style={styles.details}>
         <View>
           <Text style={{ ...FONTS.h3, color: COLORS.white }} numberOfLines={1}>
-            Hotel Name
+           {hotel.hotelname}
           </Text>
           <Text style={{ ...FONTS.h4, color: COLORS.white }} numberOfLines={1}>
-            2 rooms,2 Adults
+            {hotel.rooms+' rooms,'+hotel.beds+' bed(s)'}
           </Text>
         </View>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -35,7 +36,7 @@ const HomapageCard = () => {
             style={{ ...FONTS.body2, color: COLORS.white, marginLeft: 5 }}
             numberOfLines={1}
           >
-            address address addressaddr
+           {hotel.address}
           </Text>
         </View>
       </View>
@@ -60,7 +61,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.22,
     shadowRadius: 2.22,
 
-    elevation: 3
+    elevation: 3,
+    marginLeft:10
+    
   },
   coverImg: {
     width: "100%",

@@ -19,6 +19,7 @@ const Back = ({ navigation,currentLocation }) => {
           left: 10,
           backgroundColor: "rgba(255,255,255,.7)"
         }}
+        onPress={()=>navigation.goBack()}
       >
         <Icon name="long-arrow-left" type="font-awesome" />
       </TouchableOpacity>

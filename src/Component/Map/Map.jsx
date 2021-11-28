@@ -3,12 +3,12 @@ import { StyleSheet, Text, View, Dimensions } from "react-native";
 import CallOut from "../../ReusebleComponent/CallOut";
 import MapView, { Marker, Callout } from "react-native-maps";
 
-const Map = () => {
+const Map = ({data}) => {
   //https://github.com/react-native-maps/react-native-maps
   //https://reactnative.dev/docs/0.63/geolocation
 
-  const myLong = 29.700924;
-  const myLati = -23.887685;
+  const myLong = data.longitude;
+  const myLati = data.latitude;
 
   return (
     <MapView
@@ -31,7 +31,7 @@ const Map = () => {
           identifier="Hotel"
       >
         <Callout tooltip={true}>
-          <CallOut/>
+          <CallOut data={data}/>
         </Callout>
       </Marker>
     </MapView>

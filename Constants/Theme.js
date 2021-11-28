@@ -22,6 +22,10 @@ export const COLORS={
    gray:'rgba(196,196,196,.5)',
    black:'black',
    white:'white',
+   primary:'rgba(246,79,89,.75)',
+   secondary:'rgba(255,255,255,1)',
+   Darkgray:'rgba(196,196,196,1)',
+   AppBackgroundColor:'white'
 }
 
 export const SIZES={
