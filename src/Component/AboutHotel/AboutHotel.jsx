@@ -16,11 +16,11 @@ import Rating from "../../ReusebleComponent/Rating";
 import Reviews from "../../ReusebleComponent/Reviews";
 
 const AboutHotel = ({route,navigation}) => {
-  const hotelImg = {
-    uri: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-  };
-
+  
   const {data}=route.params 
+  const hotelImg = {
+    uri: data.outSidePhoto
+  };
 
 
   return (
