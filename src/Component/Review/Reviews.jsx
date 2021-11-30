@@ -31,9 +31,9 @@ const Reviews = ({ navigation }) => {
           </View>
           <Percent type="Exellent" percent={84} color='green'/>
           <Percent type="Good" percent={66} color='lightgreen'/>
-          <Percent type="Avarage" percent={50} color='orange'/>
-          <Percent type="Below Avarege" percent={39} color='yellow'/>
-          <Percent type="Pooor" percent={10} color='red'/>
+          <Percent type="Average" percent={50} color='orange'/>
+          <Percent type="Below Average" percent={39} color='yellow'/>
+          <Percent type="Poor" percent={10} color='red'/>
         </View>
         <FlatList
         showsVerticalScrollIndicator={false}

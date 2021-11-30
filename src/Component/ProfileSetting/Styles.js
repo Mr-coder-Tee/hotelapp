@@ -10,20 +10,22 @@ const styles=StyleSheet.create({
         flex:1,
     },
     viewContainer:{
-        marginTop:margintop
+        marginTop:margintop,
+
     },
     imgContainer:{
         width:100,
         height:100,
         backgroundColor:'red',
         borderRadius:15,
-        position:'relative'
+        position:'relative',
+
         
     },
     holder:{
         justifyContent:'center',
         alignContent:'center',
-        flexDirection:'row'
+        flexDirection:'row',
     }
     
 });
