@@ -4,6 +4,7 @@ const screenHieght = Dimensions.get("screen").height;
 const viewHeight = Dimensions.get("screen").height * 0.75;
 const decoHeight = Dimensions.get("screen").height * 0.3;
 const decoWidth = Dimensions.get("screen").width;
+const paintHieght=Dimensions.get('screen').height*.35
 
 const styles = StyleSheet.create({
   container: {
@@ -13,7 +14,9 @@ const styles = StyleSheet.create({
     height: screenHieght
   },
   viewWelcome: {
-    height: viewHeight
+    height: viewHeight,
+    marginTop: paintHieght
+
   },
   logo: {},
   decoStyle: {

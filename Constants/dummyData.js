@@ -31,43 +31,49 @@ const rev = [
     id: 1,
     avatar:
       "https://images.unsplash.com/photo-1619895862022-09114b41f16f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-    comment: "",
-    stars: 4
+    comment: "The same good versus evil paradigm applies to performance review templates. We want to make sure you're using employee reviews for good—so we did the heavy lifting and created impactful performance review templates for you!",
+    stars: 4.1,
+    username:'Lebo Sebola'
   },
   {
     id: 2,
     avatar:
       "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-    comment: "",
-    stars: 4
+    comment: "Before you put any of these templates into action, make sure you’ve been trained on the best ways to use the templates in your tool belt.In an annual performance review, managers and employees should summarize performance across the year. It's also a good opportunity to find out what goals employees would like to prioritize and to look toward the future. With these things in mind, nearly any performance review template will work.",
+    stars: 2.9,
+    username:'Lerato Maluleka'
   },
   {
     id: 3,
     avatar:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-    comment: "",
-    stars: 4
+    comment: "f monthly performance conversations aren't feasible, we recommend having them at least quarterly. This worksheet will guide you through topics of discussion for quarterly performance conversations.",
+    stars: 1,
+    username:'Geoge Queens'
   },
   {
     id: 4,
     avatar:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-    comment: "",
-    stars: 4
+    comment: "It's important for managers and employees to talk openly about an employee's compensation. Use this template to track an employee's understanding of compensation, benefits, bonuses, and pay.",
+    stars: 4.5,
+    username:'James Freak'
   },
   {
     id: 5,
     avatar:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-    comment: "",
-    stars: 4
+    comment: "This quarterly performance review example has sections for both achievements and areas of improvement. It also has a section for core values, as this must be a key performance indicator at this company. Different companies will have different measuring sticks for success.",
+    stars: 5,
+    username:'Nail Normae'
   },
   {
     id: 6,
     avatar:
       "https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-    comment: "",
-    stars: 4
+    comment: "The frequency and depth of the review process may vary by company based on company size and goals of the evaluations.",
+    stars: 3,
+    username:'Peter Loke'
   }
 ];
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import {
   View,
   Text,
@@ -8,15 +8,15 @@ import {
   Dimensions,
 } from "react-native";
 import styles from "./Styles";
-import { Images, FONTS,COLORS } from "../../../Constants/Index";
+import { Images, FONTS,COLORS,SIZES } from "../../../Constants/Index";
 import { Button } from "react-native-elements";
 import Paint from "../../ReusebleComponent/Paint";
 const decoHeight = Dimensions.get("screen").height * 0.3;
 const paintHieght=Dimensions.get('screen').height*.35
 
+const Welcome = ({navigation}) => {
 
-const Welcome = () => {
-  
+
 
   const DecoImage = Images.DecoImage;
 
@@ -46,7 +46,7 @@ const Welcome = () => {
     <View style={styles.container}>
       <Paint height={paintHieght}/>
       <View style={styles.viewWelcome}>
-        <Text style={{ textAlign: "center",...FONTS.body2, marginBottom:10,marginTop:10}}>
+        <Text style={{ textAlign: "center",...FONTS.body3, marginBottom:10,marginTop:10}}>
           find your hotel easily and book in few easy steps
         </Text>
         <View
@@ -69,10 +69,11 @@ const Welcome = () => {
             style={{ width: '100%', height: 50 ,padding:10,}}
             containerStyle={{ borderRadius: 20 }}
             buttonStyle={{ backgroundColor: COLORS.buttonColor}}
+            onPress={()=>navigation.navigate('Register')}
           />
           <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center',marginTop:20}}>
             <Text style={{...FONTS.h4,}}>Alreay have an account?</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.navigate('Login')}>
               <Text style={{ color: COLORS.textLinks,...FONTS.h4, }}> Sign in</Text>
             </TouchableOpacity>
           </View>

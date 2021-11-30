@@ -4,7 +4,7 @@ import { Icon } from "react-native-elements";
 import { COLORS, FONTS } from "../../Constants/Index";
 var stars = 5;
 
-const Rating = ({ rate }) => {
+const Rating = ({ rate, showText }) => {
   var rating = rate;
   const [starArr, setStarArray] = useState([]);
 
@@ -33,17 +33,29 @@ const Rating = ({ rate }) => {
     <View
       style={{
         flexDirection: "row",
-        alignItems:'center'
+        alignItems: "center",
       }}
     >
-      {starArr.map((star,index) =>
+      {starArr.map((star, index) =>
         star === 1 ? (
-          <Icon name="star" type="font-awesome" color={COLORS.goldColor} key={index}/>
+          <Icon
+            name="star"
+            type="font-awesome"
+            color={COLORS.goldColor}
+            key={index}
+          />
         ) : (
-          <Icon name="star-half" type="font-awesome" color={COLORS.goldColor} key={index}/>
+          <Icon
+            name="star-half"
+            type="font-awesome"
+            color={COLORS.goldColor}
+            key={index}
+          />
         )
       )}
-      <Text style={{...FONTS.body4,marginLeft:10}}>{rate}</Text>
+      {showText && (
+        <Text style={{ ...FONTS.body4, marginLeft: 10 }}>{rate}</Text>
+      )}
     </View>
   );
 };

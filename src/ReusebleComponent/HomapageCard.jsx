@@ -10,8 +10,8 @@ import {
 } from "react-native";
 import { COLORS, FONTS } from "../../Constants/Index";
 import { Icon } from "react-native-elements";
-const cardHieght = Dimensions.get("screen").height * 0.35;
-const cardWidth = Dimensions.get("screen").width * 0.55;
+const cardHieght = Dimensions.get("screen").height * 0.25;
+const cardWidth = Dimensions.get("screen").width * 0.45;
 
 const HomapageCard = ({hotel,navigation}) => {
   // console.log('--->',hotel.address)
@@ -19,21 +19,21 @@ const HomapageCard = ({hotel,navigation}) => {
     uri: hotel.outSidePhoto
   };
   return (
-    <TouchableOpacity style={styles.container} onPress={()=>navigation.navigate('AboutHotel',{data:hotel})}>
+    <TouchableOpacity activeOpacity={.7} style={styles.container} onPress={()=>navigation.navigate('AboutHotel',{data:hotel})}>
       <Image source={img} style={styles.coverImg} />
       <View style={styles.details}>
         <View>
-          <Text style={{ ...FONTS.h3, color: COLORS.white }} numberOfLines={1}>
+          <Text style={{ ...FONTS.h4, color: COLORS.white }} numberOfLines={1}>
            {hotel.hotelname}
           </Text>
-          <Text style={{ ...FONTS.h4, color: COLORS.white }} numberOfLines={1}>
+          <Text style={{ ...FONTS.body3, color: COLORS.white }} numberOfLines={1}>
             {hotel.rooms+' rooms,'+hotel.beds+' bed(s)'}
           </Text>
         </View>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Icon name="map-marker" type="font-awesome" color={COLORS.white} />
           <Text
-            style={{ ...FONTS.body2, color: COLORS.white, marginLeft: 5 }}
+            style={{ ...FONTS.body3, color: COLORS.white, marginLeft: 5 }}
             numberOfLines={1}
           >
            {hotel.address}
@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     backgroundColor: COLORS.opacityColor,
     width: "100%",
-    padding: 10
+    padding: 10,
+    height:cardHieght*.45
   }
 });

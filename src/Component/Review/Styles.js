@@ -4,14 +4,16 @@ const screenHieght=Dimensions.get('screen').height
 
 const styles=StyleSheet.create({
     container:{
+        marginTop:StatusBar.currentHeight,
         width:screenWidth,
         height:screenHieght,
         flex:1,
-        marginTop:10
+
     },
-    img:{
-        position:'absolute',
-        bottom:10,
+    reviewContainer:{
+        marginTop:StatusBar.currentHeight,
+        flex:1,
+        padding:20
     }
     
 });

@@ -1,12 +1,17 @@
+import { NavigationContainer } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity,Dimensions } from "react-native";
 import { Avatar } from "react-native-elements";
 import { COLORS } from "../../Constants/Index";
+const screenwidth=Dimensions.get("screen").width
 
-const Reviews = ({ hotelreviews }) => {
+
+const Reviews = ({ hotelreviews,navigation }) => {
   const [to, setTo] = useState();
+  const [size,setSize]=useState('small')
   const [remain, setRemain] = useState("");
 
+  
   useEffect(() => {
     const range = () => {
       if (hotelreviews.length >= 5) {
@@ -20,15 +25,23 @@ const Reviews = ({ hotelreviews }) => {
         setTo(hotelreviews.length);
       }
     };
+    const screenSetter=()=>{
+        if(screenwidth>500&&screenwidth<700){
+          setSize('medium')
+        }else if(screenwidth>700){
+          setSize('large')
+        }
+    }
+    screenSetter()
     range();
   }, []);
   return (
-    <TouchableOpacity style={{ flexDirection: "row", paddingLeft: 15 }} activeOpacity={.7}>
+    <TouchableOpacity style={{ flexDirection: "row", paddingLeft: 15 }} activeOpacity={.7} onPress={()=>navigation.navigate('Reviews')}>
       {hotelreviews.slice(0, to).map((review) => (
         <Avatar
           key={review.id}
           rounded
-          size="small"
+          size={size}
           source={{ uri: review.avatar }}
           containerStyle={{
             borderColor: "white",
@@ -42,7 +55,7 @@ const Reviews = ({ hotelreviews }) => {
         
           <Avatar
             rounded
-            size="small"
+            size={size}
             title={remain}
             containerStyle={{
               borderColor: "white",

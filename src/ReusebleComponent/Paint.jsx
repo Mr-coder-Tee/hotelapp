@@ -12,11 +12,11 @@ const Paint = ({ height }) => {
       style={{
         height: height,
         width:width,
-        padding: 30
-        // position:'absolute',
-        // top:0,
-        // left:0,
-        // right:0,
+        padding: 30,
+        position:'absolute',
+        top:0,
+        left:0,
+        right:0,
       }}
     >
       <Image source={Images.logo} />

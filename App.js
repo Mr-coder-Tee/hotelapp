@@ -18,6 +18,7 @@ import Profile from './src/Component/ProfileSetting/Profile';
 import WriteReview from './src/Component/WriteReview/WriteReview';
 import CommentCard from './src/ReusebleComponent/CommentCard';
 import GalaryView from './src/Component/ViewGalary/GalaryView';
+import Reviews from './src/Component/Review/Reviews'
 
 
 
@@ -31,14 +32,15 @@ export default function App() {
         }}
         initialRouteName='HomePage'
         >
-        <Stack.Screen name="HomePage" component={Home}/>
         <Stack.Screen name="Splashscreen" component={Splashscreen}/>
         <Stack.Screen name="Welcome" component={Welcome}/>
-        <Stack.Screen name="ResetPassword" component={ResetPassword}/>
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Register" component={Register}/>
+        <Stack.Screen name="HomePage" component={Home}/>
+        <Stack.Screen name="ResetPassword" component={ResetPassword}/>
         <Stack.Screen name="AboutHotel" component={AboutHotel}/>
         <Stack.Screen name="Location" component={Location}/>
+        <Stack.Screen name="Reviews" component={Reviews}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

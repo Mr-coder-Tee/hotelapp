@@ -1,11 +1,12 @@
-import React from "react";
+import React,{useState} from "react";
 import {
   View,
   Text,
   Dimensions,
   ImageBackground,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
+  KeyboardAvoidingView
 } from "react-native";
 import { Input, Icon, Button } from "react-native-elements";
 import styles from "./Styles";
@@ -14,11 +15,11 @@ const backGroundImgHeight = Dimensions.get("screen").height;
 const buttonLengths = 50;
 const buttonBorderRadius = buttonLengths / 2;
 
-const Login = () => {
-  const passView = true;
+const Login = ({navigation}) => {
+  const [passView,setPassView]=useState(true)
 
   const PasswordToggle = () => (
-    <TouchableOpacity activeOpacity={0.7}>
+    <TouchableOpacity activeOpacity={0.7} onPress={()=>setPassView(!passView)}>
       {passView ? (
         <Icon name="eye" type="font-awesome" style={{ marginRight: 10 }} />
       ) : (
@@ -74,6 +75,9 @@ const Login = () => {
       </ImageBackground>
       <View style={styles.contentView}>
         <Text style={{...FONTS.h1,marginBottom:10}}>Welcome Back</Text>
+        <KeyboardAvoidingView>
+
+
         <Input
           leftIcon={
             <Icon name="at" type="font-awesome" style={{ marginRight: 10 }} />
@@ -104,7 +108,9 @@ const Login = () => {
             paddingLeft: 10,
             paddingRight: 10
           }}
+          secureTextEntry={passView}
         />
+        </KeyboardAvoidingView>
         <TouchableOpacity style={{ alignItems: "flex-end", paddingRight: 10 }}>
           <Text style={{ color: COLORS.textLinks,...FONTS.body3 }}>forgot password?</Text>
         </TouchableOpacity>
@@ -130,6 +136,7 @@ const Login = () => {
               width: buttonLengths,
               height: buttonLengths
             }}
+            onPress={()=>navigation.navigate('HomePage')}
           />
         </View>
         <Text style={{textAlign:'center',...FONTS.body2,marginBottom:5}}>or</Text>
@@ -143,9 +150,9 @@ const Login = () => {
           
           <Socials />
         </View>
-        <View style={{flexDirection:'row',marginTop:10,alignItems:'center',justifyContent:'center'}}>
+        <View style={{flexDirection:'row',marginTop:20,alignItems:'center',justifyContent:'center'}}>
           <Text style={{...FONTS.body2}}>Don’t have account yet?</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>navigation.navigate('Register')}>
             <Text style={{...FONTS.body2,color:COLORS.textLinks}}>Sign up</Text>
           </TouchableOpacity>
         </View>

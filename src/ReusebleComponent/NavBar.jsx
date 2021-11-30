@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Icon, Badge } from "react-native-elements";
 import { SIZES, FONTS, COLORS } from "../../Constants/Index";
 
-const size = SIZES.screenWidth * 0.1;
+const size = SIZES.screenWidth * 0.08;
 
 const NavBar = ({ navigation, Route }) => {
   const notification = true;

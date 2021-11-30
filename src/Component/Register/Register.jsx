@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {
   View,
   Text,
@@ -10,17 +10,18 @@ import styles from "./Styles";
 import { Images, FONTS, COLORS } from "../../../Constants/Index";
 import { Input, Icon, Button } from "react-native-elements";
 import Paint from "../../ReusebleComponent/Paint";
+import { NavigationContainer } from "@react-navigation/native";
 const backGroundImgHeight = Dimensions.get("screen").height;
 const buttonLengths = 50;
 const buttonBorderRadius = buttonLengths / 2;
 const screenHieght = Dimensions.get("screen").height;
 const paintHeight = screenHieght * 0.3;
 
-const Register = () => {
-  const passView = true;
+const Register = ({navigation}) => {
+  const [passView,setPassView]=useState(true)
 
   const PasswordToggle = () => (
-    <TouchableOpacity activeOpacity={0.7}>
+    <TouchableOpacity activeOpacity={0.7} onPress={()=>setPassView(!passView)}>
       {passView ? (
         <Icon name="eye" type="font-awesome" style={{ marginRight: 10 }} />
       ) : (
@@ -111,6 +112,7 @@ const Register = () => {
               paddingLeft: 10,
               paddingRight: 10
             }}
+            secureTextEntry={passView}
           />
           <View
             style={{
@@ -123,6 +125,7 @@ const Register = () => {
           >
             <Text style={{ ...FONTS.body1, marginBottom: 10 }}>Sign up</Text>
             <Button
+            onPress={()=>navigation.navigate('HomePage')}
               icon={
                 <Icon
                   name="long-arrow-right"
@@ -149,7 +152,7 @@ const Register = () => {
             }}
           >
             <Text style={{ ...FONTS.body2 }}>Already Have an account?</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.navigate('Login')}>
               <Text style={{ ...FONTS.body2, color: COLORS.textLinks }}>
                 Sign in
               </Text>

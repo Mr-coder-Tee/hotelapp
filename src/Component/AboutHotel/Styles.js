@@ -3,8 +3,9 @@ import { COLORS, FONTS } from "../../../Constants/Index";
 const screenWidth = Dimensions.get("screen").width;
 const screenHieght = Dimensions.get("screen").height;
 
-const hotelBackgroundHieght = screenHieght * 0.3;
-const viewHieght = screenHieght * 0.65;
+const hotelBackgroundHieght = screenHieght * 0.35;
+const marginTop = hotelBackgroundHieght*.88
+const h=screenHieght*.08
 
 const styles = StyleSheet.create({
   container: {
@@ -17,18 +18,20 @@ const styles = StyleSheet.create({
   hotelBackground: {
     width: screenWidth,
     height: hotelBackgroundHieght,
-    backgroundColor: "red"
-  },
-  viewContainer: {
-    height: viewHieght,
-    position: "absolute",
-    bottom: 0,
+    backgroundColor: "red",
+     position: "absolute",
+    top: 0,
     left: 0,
     right: 0,
+  },
+  viewContainer: {
     borderTopRightRadius: 40,
     borderTopLeftRadius: 40,
     backgroundColor: "rgba(255,255,255,1)",
-    padding: 20
+    padding: 20,
+    paddingBottom:h,
+    flex:1,
+    marginTop:marginTop,
   },
   mapTouch: {
     backgroundColor: COLORS.goldColor,
@@ -50,12 +53,13 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    padding: 15,
+    padding: 10,
     justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    height:h
   }
 });
 export default styles;
